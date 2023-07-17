@@ -1,0 +1,16 @@
+[package]
+name="testblutooth"
+version="0.0.1"
+
+[dependencies]
+dbus="0.9.7"
+
+# to override some dependencies implementation, 
+#[patch.crates-io]
+#libdbus-sys = { path = 'dependencies/dbus-rs/libdbus-sys' }
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "z"  # Optimize for size.
